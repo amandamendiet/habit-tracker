@@ -1,11 +1,14 @@
 from idlelib.rpc import response_queue
-
+import os
+from dotenv import load_dotenv
 import requests
 import datetime
 
-PIXELA_ENDPOINT = "https://pixe.la/v1/users"
-PIXELA_USERNAME = "amandamendiet"
-PIXELA_TOKEN = "kduy74yo3hf4hiwuehweoerqq43yfhh"
+load_dotenv()
+
+PIXELA_ENDPOINT = os.environ.get("PIXELA_ENDPOINT")
+PIXELA_USERNAME = os.environ.get("PIXELA_USERNAME")
+PIXELA_TOKEN = os.environ.get("PIXELA_TOKEN")
 USER_PARAMS = {
     'token': PIXELA_TOKEN,
     'username': PIXELA_USERNAME,
